@@ -6,9 +6,9 @@ import logoAsset from "@/assets/Anna_Essential_Botanical_Logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Home", to: "/" as const, hash: undefined },
+  { label: "Home", to: "/" as const },
   { label: "About", to: "/" as const, hash: "about" },
-  { label: "Products", to: "/products" as const, hash: undefined },
+  { label: "Products", to: "/products" as const },
   { label: "Publications", to: "/" as const, hash: "publications" },
   { label: "Contact", to: "/" as const, hash: "contact" },
 ];
@@ -28,7 +28,7 @@ export function SiteHeader({ onOrder }: { onOrder: () => void }) {
             <Link
               key={item.label}
               to={item.to}
-              hash={item.hash}
+              {...("hash" in item ? { hash: item.hash } : {})}
               className="nav-link text-[0.7rem] font-medium uppercase tracking-[0.16em]"
               activeProps={{ className: "nav-link nav-link-active text-[0.7rem] font-medium uppercase tracking-[0.16em]" }}
             >
@@ -62,7 +62,7 @@ export function SiteHeader({ onOrder }: { onOrder: () => void }) {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={item.hash}
+                {...("hash" in item ? { hash: item.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="border-b border-hero-line py-4 text-sm uppercase tracking-[0.16em]"
               >
