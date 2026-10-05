@@ -20,7 +20,7 @@ export function SiteHeader({ onOrder }: { onOrder: () => void }) {
     <header className="absolute inset-x-0 top-0 z-40 border-b border-hero-line text-hero-foreground">
       <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:h-24 lg:grid-cols-[auto_1fr_auto] lg:px-10">
         <Link to="/" aria-label="Anna Essentials home" className="block w-28 shrink-0 lg:w-36">
-          <img src={logoAsset.url} alt="Anna Essentials" className="h-14 w-full object-cover object-center mix-blend-screen invert lg:h-16" />
+          <img src={logoAsset.url} alt="Anna Essentials" className="h-14 w-full bg-logo object-cover object-center lg:h-16" />
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-8 lg:flex">

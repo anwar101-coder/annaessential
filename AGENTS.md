@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep shared Anna Essentials product content in `src/lib/products.ts` until the planned Cloud-backed product system replaces it, so storefront views never duplicate catalog data.
