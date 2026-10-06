@@ -20,6 +20,7 @@ export function SiteFooter() {
             <Link to="/products">Products</Link>
             <Link to="/" hash="about">Our story</Link>
             <Link to="/" hash="publications">Journal</Link>
+            <Link to="/auth">Owner access</Link>
           </div>
         </div>
         <div>

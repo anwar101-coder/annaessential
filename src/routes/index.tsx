@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, BookOpen, Leaf, MapPin, Sparkles } from "lucide-react";
 import { useState } from "react";
 
@@ -10,9 +11,12 @@ import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import { products } from "@/lib/products";
+import { getPublicProducts } from "@/lib/products.functions";
+
+const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
 
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery),
   head: () => ({
     meta: [
       { title: "Anna Essentials | Natural Oils in Addis Ababa" },
@@ -28,6 +32,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [orderOpen, setOrderOpen] = useState(false);
+  const { data: products } = useSuspenseQuery(productsQuery);
   const featuredProducts = products.filter((product) => product.featured);
 
   return (

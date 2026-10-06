@@ -9,4 +9,6 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep shared Anna Essentials product content in `src/lib/products.ts` until the planned Cloud-backed product system replaces it, so storefront views never duplicate catalog data.
+- Use Lovable Cloud `products` as the storefront catalogue source; keep only shared product types in `src/lib/products.ts`, so public and owner views stay synchronized.
+- Keep product photos in the private `product-images` bucket and expose only short-lived signed URLs, because workspace policy blocks public buckets and owner uploads must remain controlled.
+- Protect product mutations with role-based database policies and a one-time atomic first-owner claim, so client-side state can never grant administrative access.

@@ -45,7 +45,14 @@ function AdminPage() {
     setAuthorized(Boolean(isAdmin));
     if (!isAdmin) return;
     const { data, error } = await supabase.from("products").select("*").order("sort_order");
-    if (error) setNotice(error.message); else setProducts(data ?? []);
+    if (error) { setNotice(error.message); return; }
+    const rows = data ?? [];
+    const withPhotos = await Promise.all(rows.map(async (product) => {
+      if (!product.image_path) return product;
+      const { data: signed } = await supabase.storage.from("product-images").createSignedUrl(product.image_path, 3600);
+      return { ...product, image_url: signed?.signedUrl ?? product.image_url };
+    }));
+    setProducts(withPhotos);
   }
   useEffect(() => { void load(); }, []);
 
