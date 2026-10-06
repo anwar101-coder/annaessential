@@ -12,6 +12,10 @@ export type Product = {
   description: string;
   image: string;
   featured: boolean;
+  available?: boolean;
+  status?: "draft" | "published";
+  imagePath?: string | null;
+  sortOrder?: number;
 };
 
 export const products: Product[] = [

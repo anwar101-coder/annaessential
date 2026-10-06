@@ -1,13 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { OrderDialog } from "@/components/order-dialog";
 import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { products } from "@/lib/products";
+import { getPublicProducts } from "@/lib/products.functions";
+
+const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
 
 export const Route = createFileRoute("/products")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery),
   head: () => ({
     meta: [
       { title: "Our Products | Anna Essentials" },
@@ -23,6 +27,7 @@ export const Route = createFileRoute("/products")({
 
 function ProductsPage() {
   const [orderOpen, setOrderOpen] = useState(false);
+  const { data: products } = useSuspenseQuery(productsQuery);
 
   return (
     <div className="min-h-screen bg-background">
