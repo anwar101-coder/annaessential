@@ -1,31 +1,37 @@
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import type { Product } from "@/lib/products";
 
 export function ProductCard({ product, onOrder }: { product: Product; onOrder: () => void }) {
   return (
-    <article className="product-card group">
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.025]"
-          loading="lazy"
-        />
-        <span className="absolute left-4 top-4 bg-background/92 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary">
-          {product.size}
-        </span>
-      </div>
-      <div className="px-1 pt-5">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-          <h3 className="min-w-0 font-display text-2xl leading-tight text-foreground">{product.name}</h3>
-          <p className="shrink-0 text-sm font-semibold text-primary">{product.price.toLocaleString()} birr</p>
+    <article className="product-card group flex h-full flex-col">
+      <Link
+        to="/products/$productId"
+        params={{ productId: product.id }}
+        aria-label={`View ${product.name}`}
+        className="product-card-media block rounded-[1.75rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+      >
+        <div className="flex aspect-[4/5] items-center justify-center p-5 sm:p-7">
+          <img
+            src={product.image}
+            alt={`${product.name} bottle`}
+            className="product-card-image max-h-full w-full rounded-[1.1rem] object-contain"
+            loading="lazy"
+          />
         </div>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">{product.description}</p>
-        <Button variant="ghost" className="mt-3 -ml-3" onClick={onOrder}>
-          Order product <ArrowUpRight className="size-4" />
-        </Button>
+      </Link>
+      <div className="flex flex-1 flex-col px-1 pt-6">
+        <Link to="/products/$productId" params={{ productId: product.id }} className="font-display text-[1.65rem] leading-tight text-primary hover:text-gold-deep">
+          {product.name}
+        </Link>
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">{product.description}</p>
+        <div className="mt-auto flex items-center justify-between gap-4 pt-5">
+          <p className="text-sm font-medium tracking-[0.04em] text-foreground">{product.price.toLocaleString()} ETB</p>
+          <button type="button" onClick={onOrder} className="order-link inline-flex min-h-11 items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary">
+            Order now <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+        </div>
       </div>
     </article>
   );
