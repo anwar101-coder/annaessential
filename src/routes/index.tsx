@@ -3,7 +3,8 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, BookOpen, Leaf, MapPin, Sparkles } from "lucide-react";
 import { useState } from "react";
 
-import castorAsset from "@/assets/Anna_Castor_Oil_Botanical_Display.png.asset.json";
+import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
+import heroMobile from "@/assets/anna-hero-mobile.jpg";
 import myrrhAsset from "@/assets/Anna_Myrrah_Essential_Oil_Still_Life.png.asset.json";
 import rosemaryAsset from "@/assets/Natural_Rosemary_Hair_Oil_with_Dropper_Cap.png.asset.json";
 import { OrderDialog } from "@/components/order-dialog";
@@ -37,28 +38,31 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="hero-shell relative flex min-h-[720px] items-end overflow-hidden pt-24 text-hero-foreground lg:min-h-[820px]">
-        <img src={castorAsset.url} alt="Anna Castor Oil surrounded by natural botanicals" className="absolute inset-0 h-full w-full object-cover object-center" />
+      <section className="hero-shell relative flex min-h-[100svh] items-center md:min-h-[640px] md:items-end overflow-hidden pt-24 text-hero-foreground lg:min-h-[820px]">
+        <picture>
+          <source media="(max-width: 767px)" srcSet={heroMobile} />
+          <img src={heroAsset.url} alt="Two Anna Essentials dropper bottles on a deep navy background" className="absolute inset-0 h-full w-full object-cover object-center" />
+        </picture>
         <div className="hero-shade absolute inset-0" />
         <SiteHeader onOrder={() => setOrderOpen(true)} />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-5 pb-16 text-center lg:px-10 lg:pb-20">
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 pb-16 text-center sm:px-10 md:pb-16 lg:pb-20">
           <p className="mb-5 flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold">
             <span className="h-px w-8 bg-gold" /> Natural care, thoughtfully made <span className="h-px w-8 bg-gold" />
           </p>
-          <h1 className="max-w-4xl font-display text-5xl leading-[0.98] text-hero-foreground sm:text-6xl lg:text-8xl">
+          <h1 className="max-w-[11ch] font-display text-[2.9rem] leading-[0.98] text-hero-foreground sm:text-6xl md:max-w-2xl lg:max-w-3xl lg:text-7xl xl:text-8xl">
             Nature, bottled with intention.
           </h1>
-          <p className="mt-6 max-w-xl text-sm leading-7 text-hero-muted sm:text-base">
+          <p className="mt-6 max-w-sm text-sm md:max-w-md lg:max-w-xl leading-7 text-hero-muted sm:text-base">
             Discover Anna Essentials’ collection of natural hair and essential oils, created to bring care and simplicity to everyday rituals.
           </p>
           <Button variant="gold" className="mt-8" onClick={() => setOrderOpen(true)}>
             Order now <ArrowRight className="size-4" />
           </Button>
 
-          <div className="mt-12 grid w-full max-w-3xl grid-cols-3 border-y border-hero-line py-5 text-left">
+          <div className="mt-12 grid w-full max-w-xl lg:max-w-2xl grid-cols-3 border-y border-hero-line py-5 text-left">
             <div className="border-r border-hero-line px-3 sm:px-7">
-              <p className="hero-stat">05</p><p className="hero-stat-label">Real products</p>
+              <p className="hero-stat">Pure</p><p className="hero-stat-label">Natural oils</p>
             </div>
             <div className="border-r border-hero-line px-3 sm:px-7">
               <p className="hero-stat">100%</p><p className="hero-stat-label">Natural focus</p>
@@ -79,10 +83,10 @@ function Index() {
                 <h2 className="section-title mt-3">Our essential selection</h2>
               </div>
               <p className="max-w-md text-sm leading-7 text-muted-foreground md:text-right">
-                Five natural oils, presented with care. Explore three customer favourites or discover the complete collection.
+                Natural oils, presented with care. Explore our favourites or discover the complete collection.
               </p>
             </div>
-            <div className="grid gap-10 md:grid-cols-3 md:gap-5 lg:gap-8">
+            <div className="grid gap-14 sm:grid-cols-2 sm:gap-x-6 md:grid-cols-3 md:gap-6 lg:gap-10">
               {featuredProducts.map((product) => <ProductCard key={product.id} product={product} onOrder={() => setOrderOpen(true)} />)}
             </div>
             <div className="mt-12 text-center">
@@ -132,7 +136,6 @@ function Index() {
                   <div className="flex items-center justify-between"><span className="text-xs font-semibold text-gold-deep">{number}</span><BookOpen className="size-4 text-primary" /></div>
                   <h3 className="mt-12 font-display text-2xl">{title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted-foreground">{copy}</p>
-                  <p className="mt-8 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-primary">Coming soon</p>
                 </article>
               ))}
             </div>

@@ -3,6 +3,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import logoLight from "@/assets/anna-essentials-logo-light.png";
+import { BackButton } from "@/components/back-button";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -13,15 +14,18 @@ const navItems = [
   { label: "Contact", to: "/" as const, hash: "contact" },
 ];
 
-export function SiteHeader({ onOrder }: { onOrder: () => void }) {
+export function SiteHeader({ onOrder, showBack = false }: { onOrder: () => void; showBack?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="absolute inset-x-0 top-0 z-40 border-b border-hero-line text-hero-foreground">
       <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:h-24 lg:grid-cols-[auto_1fr_auto] lg:px-10">
-        <Link to="/" aria-label="Anna Essentials home" className="block w-24 shrink-0 lg:w-28">
-          <img src={logoLight} alt="Anna Essentials" className="h-16 w-full object-contain lg:h-20" />
-        </Link>
+        <div className="flex min-w-0 items-center gap-3 sm:gap-5">
+          {showBack && <BackButton />}
+          <Link to="/" aria-label="Anna Essentials home" className="block w-24 shrink-0 lg:w-28">
+            <img src={logoLight} alt="Anna Essentials" className="h-16 w-full object-contain lg:h-20" />
+          </Link>
+        </div>
 
         <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-8 lg:flex">
           {navItems.map((item) => (
