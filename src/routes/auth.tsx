@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowLeft } from "lucide-react";
 
+import { BackButton } from "@/components/back-button";
 import logoDark from "@/assets/anna-essentials-logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,9 +50,9 @@ function AuthPage() {
     if (!result.redirected) await navigate({ to: "/admin" });
   }
 
-  return <main className="grid min-h-screen place-items-center bg-secondary px-5 py-12">
+  return <main className="relative grid min-h-screen place-items-center bg-secondary px-5 pb-12 pt-24">
+    <BackButton tone="dark" className="absolute left-5 top-5 sm:left-8 sm:top-8" />
     <section className="w-full max-w-md border border-border bg-background p-7 shadow-editorial sm:p-10">
-      <Link to="/" className="mb-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"><ArrowLeft className="size-4" /> Storefront</Link>
       <img src={logoDark} alt="Anna Essentials" className="h-24 w-40 object-contain object-left" />
       <h1 className="mt-8 font-display text-4xl">Owner access</h1>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">Sign in to manage the Anna Essentials collection.</p>

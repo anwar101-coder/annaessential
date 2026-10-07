@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+
+import { TelegramIcon, TikTokIcon } from "@/components/social-icons";
 
 import logoLight from "@/assets/anna-essentials-logo-light.png";
 
@@ -27,8 +29,8 @@ export function SiteFooter() {
           <p className="footer-title">Contact</p>
           <div className="mt-5 space-y-4 text-sm text-primary-foreground/70">
             <a href="tel:+251911346077" className="flex items-center gap-3"><Phone className="size-4 text-gold" /> 0911 346 077</a>
-            <a href="https://t.me/teybahh" target="_blank" rel="noreferrer" className="flex items-center gap-3"><MessageCircle className="size-4 text-gold" /> Telegram</a>
-            <a href="https://www.tiktok.com/@teyba886?_r=1&_t=ZS-9AGoDLIAR0u" target="_blank" rel="noreferrer" className="flex items-center gap-3"><Instagram className="size-4 text-gold" /> TikTok</a>
+            <a href="https://t.me/teybahh" target="_blank" rel="noreferrer" className="flex items-center gap-3"><TelegramIcon className="size-4 text-gold" /> Telegram</a>
+            <a href="https://www.tiktok.com/@teyba886?_r=1&_t=ZS-9AGoDLIAR0u" target="_blank" rel="noreferrer" className="flex items-center gap-3"><TikTokIcon className="size-4 text-gold" /> TikTok</a>
             <p className="flex items-start gap-3"><MapPin className="mt-0.5 size-4 shrink-0 text-gold" /> Jemo Michael, Star City Mall, ground floor, Addis Ababa</p>
           </div>
         </div>
