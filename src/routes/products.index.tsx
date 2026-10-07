@@ -10,7 +10,7 @@ import { getPublicProducts } from "@/lib/products.functions";
 
 const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery),
   head: () => ({
     meta: [
