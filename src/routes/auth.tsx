@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowLeft } from "lucide-react";
 
-import logoAsset from "@/assets/Anna_Essential_Botanical_Logo.png.asset.json";
+import logoDark from "@/assets/anna-essentials-logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -52,7 +52,7 @@ function AuthPage() {
   return <main className="grid min-h-screen place-items-center bg-secondary px-5 py-12">
     <section className="w-full max-w-md border border-border bg-background p-7 shadow-editorial sm:p-10">
       <Link to="/" className="mb-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"><ArrowLeft className="size-4" /> Storefront</Link>
-      <img src={logoAsset.url} alt="Anna Essentials" className="h-20 w-40 bg-logo object-cover" />
+      <img src={logoDark} alt="Anna Essentials" className="h-24 w-40 object-contain object-left" />
       <h1 className="mt-8 font-display text-4xl">Owner access</h1>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">Sign in to manage the Anna Essentials collection.</p>
       <form onSubmit={submit} className="mt-8 space-y-5">
