@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 
-import logoAsset from "@/assets/Anna_Essential_Botanical_Logo.png.asset.json";
+import logoLight from "@/assets/anna-essentials-logo-light.png";
 
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-14 md:grid-cols-[1.3fr_0.7fr_1fr] lg:px-10 lg:py-20">
         <div>
-          <img src={logoAsset.url} alt="Anna Essentials" className="h-20 w-44 bg-logo object-cover object-center" />
+          <img src={logoLight} alt="Anna Essentials" className="h-24 w-44 object-contain object-left" />
           <p className="mt-5 max-w-sm text-sm leading-7 text-primary-foreground/70">
             Thoughtfully presented natural oils for everyday rituals, built by an Ethiopian woman entrepreneur with a vision for women across Africa.
           </p>

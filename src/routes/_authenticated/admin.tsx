@@ -2,7 +2,8 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ImagePlus, LogOut, Pencil, Plus, Save, Trash2, X } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
 
-import logoAsset from "@/assets/Anna_Essential_Botanical_Logo.png.asset.json";
+import logoDark from "@/assets/anna-essentials-logo-transparent.png";
+import logoLight from "@/assets/anna-essentials-logo-light.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -96,13 +97,13 @@ function AdminPage() {
   if (!authorized) return <main className="grid min-h-screen place-items-center bg-secondary px-5"><section className="max-w-md bg-background p-8 text-center shadow-editorial"><h1 className="font-display text-4xl">Access restricted</h1><p className="mt-4 text-sm leading-7 text-muted-foreground">An owner account already exists. Ask the owner to grant access.</p><Button className="mt-7" onClick={signOut}>Sign out</Button></section></main>;
 
   return <div className="min-h-screen bg-secondary">
-    <header className="border-b border-border bg-primary text-primary-foreground"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10"><Link to="/"><img src={logoAsset.url} alt="Anna Essentials" className="h-14 w-28 bg-logo object-cover" /></Link><Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10" onClick={signOut}><LogOut className="size-4" /> Sign out</Button></div></header>
+    <header className="border-b border-border bg-primary text-primary-foreground"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10"><Link to="/"><img src={logoLight} alt="Anna Essentials" className="h-16 w-24 object-contain" /></Link><Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/10" onClick={signOut}><LogOut className="size-4" /> Sign out</Button></div></header>
     <main className="mx-auto max-w-7xl px-5 py-10 lg:px-10 lg:py-14">
       <div className="flex flex-wrap items-end justify-between gap-5"><div><p className="eyebrow">Private workspace</p><h1 className="mt-2 font-display text-4xl sm:text-5xl">Product management</h1></div><Button onClick={() => edit()}><Plus className="size-4" /> Add product</Button></div>
       {notice && <p className="mt-6 border-l-2 border-gold bg-background px-4 py-3 text-sm" role="status">{notice}</p>}
       <div className="mt-10 grid gap-4">
         {products.map((product) => <article key={product.id} className="grid gap-5 border border-border bg-background p-4 sm:grid-cols-[96px_1fr_auto] sm:items-center">
-          <img src={product.image_url || preview || logoAsset.url} alt="" className="aspect-square w-24 object-cover" />
+          <img src={product.image_url || preview || logoDark} alt="" className="aspect-square w-24 object-contain" />
           <div><div className="flex flex-wrap items-center gap-3"><h2 className="font-display text-2xl">{product.name}</h2><span className="border border-border px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em]">{product.status}</span></div><p className="mt-1 text-sm text-muted-foreground">{product.price.toLocaleString()} birr · {product.size} · {product.available ? "Available" : "Unavailable"}</p></div>
           <div className="flex gap-2"><Button variant="icon" size="icon" aria-label={`Edit ${product.name}`} title="Edit product" onClick={() => edit(product)}><Pencil className="size-4" /></Button><Button variant="icon" size="icon" aria-label={`Delete ${product.name}`} title="Delete product" onClick={() => void remove(product)}><Trash2 className="size-4" /></Button></div>
         </article>)}
