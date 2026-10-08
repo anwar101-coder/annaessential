@@ -1,6 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
-import { ArrowLeft } from "lucide-react";
 
 import { BackButton } from "@/components/back-button";
 import logoDark from "@/assets/anna-essentials-logo-transparent.png";
