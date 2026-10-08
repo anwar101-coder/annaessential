@@ -22,7 +22,7 @@ export const getPublicProducts = createServerFn({ method: "GET" }).handler(async
   });
   const { data, error } = await client
     .from("products")
-    .select("id, name, price, size, description, image_url, image_path, featured, available, status, sort_order")
+    .select("id, name, price, size, description, image_url, image_path, featured, available, status, sort_order, features")
     .eq("status", "published")
     .eq("available", true)
     .order("sort_order");
@@ -45,6 +45,10 @@ export const getPublicProducts = createServerFn({ method: "GET" }).handler(async
     image: item.image_path ? (signedUrls[item.image_path] ?? item.image_url) : item.image_url,
     imagePath: item.image_path,
     featured: item.featured,
+    features: item.features.split("\n").map((line) => line.trim()).filter(Boolean).slice(0, 3).map((line) => {
+      const [title, ...rest] = line.split(":");
+      return { title: (title ?? "").trim(), detail: rest.join(":").trim() };
+    }),
     available: item.available,
     status: item.status,
     sortOrder: item.sort_order,

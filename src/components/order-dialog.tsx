@@ -1,5 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { MessageCircle, Phone, X } from "lucide-react";
+import { Phone, X } from "lucide-react";
+
+import { TelegramIcon, WhatsAppIcon } from "@/components/social-icons";
 
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +16,7 @@ export function OrderDialog({ open, onOpenChange }: { open: boolean; onOpenChang
               <p className="eyebrow">Choose how to order</p>
               <Dialog.Title className="mt-2 font-display text-3xl text-foreground">We’re ready to help.</Dialog.Title>
               <Dialog.Description className="mt-3 text-sm leading-6 text-muted-foreground">
-                Contact Anna Essentials directly through Telegram or by phone.
+                Contact Anna Essentials directly through WhatsApp, Telegram or by phone.
               </Dialog.Description>
             </div>
             <Dialog.Close asChild>
@@ -23,7 +25,10 @@ export function OrderDialog({ open, onOpenChange }: { open: boolean; onOpenChang
           </div>
           <div className="grid gap-3">
             <Button asChild variant="primary" className="w-full">
-              <a href="https://t.me/teybahh" target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> Order on Telegram</a>
+              <a href="https://wa.me/251911346077" target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> Order on WhatsApp</a>
+            </Button>
+            <Button asChild variant="primary" className="w-full">
+              <a href="https://t.me/teybahh" target="_blank" rel="noreferrer"><TelegramIcon className="size-4" /> Order on Telegram</a>
             </Button>
             <Button asChild variant="outline" className="w-full">
               <a href="tel:+251911346077"><Phone className="size-4" /> Call 0911 346 077</a>
