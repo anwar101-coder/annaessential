@@ -47,7 +47,7 @@ export const getPublicProducts = createServerFn({ method: "GET" }).handler(async
     featured: item.featured,
     features: item.features.split("\n").map((line) => line.trim()).filter(Boolean).slice(0, 3).map((line) => {
       const [title, ...rest] = line.split(":");
-      return { title: title.trim(), detail: rest.join(":").trim() };
+      return { title: (title ?? "").trim(), detail: rest.join(":").trim() };
     }),
     available: item.available,
     status: item.status,
