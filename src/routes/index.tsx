@@ -38,7 +38,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="hero-shell relative flex min-h-[100svh] items-center md:min-h-[640px] md:items-end overflow-hidden pt-24 text-hero-foreground lg:min-h-[820px]">
+      <section className="hero-shell relative flex min-h-[max(100svh,780px)] items-center md:min-h-[640px] md:items-end overflow-hidden pt-24 text-hero-foreground lg:min-h-[820px]">
         <picture>
           <source media="(max-width: 767px)" srcSet={heroMobile} />
           <img src={heroAsset.url} alt="Two Anna Essentials dropper bottles on a deep navy background" className="absolute inset-0 h-full w-full object-cover object-center" />
@@ -47,20 +47,20 @@ function Index() {
         <SiteHeader onOrder={() => setOrderOpen(true)} />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 pb-16 text-center sm:px-10 md:pb-16 lg:pb-20">
-          <p className="mb-5 flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold">
-            <span className="h-px w-8 bg-gold" /> Natural care, thoughtfully made <span className="h-px w-8 bg-gold" />
+          <p className="mb-5 flex items-center gap-3 text-[0.6rem] sm:text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold">
+            <span className="hidden h-px w-8 bg-gold sm:block" /> Natural care, thoughtfully made <span className="hidden h-px w-8 bg-gold sm:block" />
           </p>
           <h1 className="max-w-[11ch] font-display text-[2.9rem] leading-[0.98] text-hero-foreground sm:text-6xl md:max-w-2xl lg:max-w-3xl lg:text-7xl xl:text-8xl">
             Nature, bottled with intention.
           </h1>
-          <p className="mt-6 max-w-sm text-sm md:max-w-md lg:max-w-xl leading-7 text-hero-muted sm:text-base">
+          <p className="mt-5 max-w-[19rem] text-[0.82rem] leading-6 sm:text-sm md:max-w-md lg:max-w-xl leading-7 text-hero-muted sm:text-base">
             Discover Anna Essentials’ collection of natural hair and essential oils, created to bring care and simplicity to everyday rituals.
           </p>
           <Button variant="gold" className="mt-8" onClick={() => setOrderOpen(true)}>
             Order now <ArrowRight className="size-4" />
           </Button>
 
-          <div className="mt-12 grid w-full max-w-xl lg:max-w-2xl grid-cols-3 border-y border-hero-line py-5 text-left">
+          <div className="mt-12 hidden w-full max-w-xl md:grid lg:max-w-2xl grid-cols-3 border-y border-hero-line py-5 text-left">
             <div className="border-r border-hero-line px-3 sm:px-7">
               <p className="hero-stat">Pure</p><p className="hero-stat-label">Natural oils</p>
             </div>
