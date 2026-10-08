@@ -12,6 +12,7 @@ import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/social-icons";
 import { getPublicProducts } from "@/lib/products.functions";
 
 const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
@@ -168,7 +169,7 @@ function Index() {
               <p className="eyebrow">Let’s connect</p>
               <h2 className="section-title mt-3">Personal service, one message away.</h2>
               <p className="mt-6 max-w-lg text-base leading-8 text-muted-foreground">Ask about a product, place an order, or learn where to find Anna Essentials at selected holiday exhibitions.</p>
-              <Button variant="primary" className="mt-8" onClick={() => setOrderOpen(true)}>Contact Anna Essentials <ArrowRight className="size-4" /></Button>
+              <div className="mt-8 flex flex-wrap gap-3"><Button variant="primary" onClick={() => setOrderOpen(true)}>Contact Anna Essentials <ArrowRight className="size-4" /></Button><Button asChild variant="outline"><a href="https://wa.me/251911346077" target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a></Button></div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden">
               <img src={myrrhAsset.url} alt="Anna Myrrh Essential Oil display" className="h-full w-full object-cover object-[center_58%]" loading="lazy" />

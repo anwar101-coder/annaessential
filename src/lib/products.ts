@@ -12,6 +12,7 @@ export type Product = {
   description: string;
   image: string;
   featured: boolean;
+  features?: { title: string; detail: string }[];
   available?: boolean;
   status?: "draft" | "published";
   imagePath?: string | null;
