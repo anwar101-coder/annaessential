@@ -118,6 +118,7 @@ function Index() {
           <div className="mx-auto max-w-7xl px-5 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
             <div className="max-w-2xl">
 
+
                 <p className="eyebrow">About Anna Essentials</p>
                 <h2 className="section-title mt-3">A woman’s vision, growing with every bottle.</h2>
                 <p className="mt-7 text-base leading-8 text-muted-foreground">
@@ -129,8 +130,8 @@ function Index() {
                 </div>
             </div>
           </div>
-
         </section>
+
 
         <section id="publications" className="section-space scroll-mt-20">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
