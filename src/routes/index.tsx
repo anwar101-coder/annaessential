@@ -7,7 +7,6 @@ import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
 import heroMobile from "@/assets/anna-hero-mobile.jpg";
 import collectionBannerAsset from "@/assets/anna-collection-banner.png.asset.json";
 import myrrhAsset from "@/assets/Anna_Myrrah_Essential_Oil_Still_Life.png.asset.json";
-import rosemaryAsset from "@/assets/Natural_Rosemary_Hair_Oil_with_Dropper_Cap.png.asset.json";
 import { OrderDialog } from "@/components/order-dialog";
 import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
@@ -99,28 +98,26 @@ function Index() {
 
         <section aria-label="The complete Anna Essentials collection" className="overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
-            <div className="overflow-hidden rounded-[2rem] shadow-editorial">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-editorial">
               <img
                 src={collectionBannerAsset.url}
                 alt="The complete Anna Essentials oil collection — Pure Nature. Real Benefits."
                 className="h-auto w-full object-cover"
                 loading="lazy"
               />
+              <div className="absolute bottom-4 left-4 bg-background/95 px-4 py-3 shadow-editorial sm:bottom-7 sm:left-7 sm:px-5 sm:py-4">
+                <p className="font-display text-xl text-primary sm:text-2xl">Made with purpose</p>
+                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">Built in Ethiopia</p>
+              </div>
             </div>
+
           </div>
         </section>
 
         <section id="about" className="scroll-mt-20 bg-secondary">
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-            <div className="relative min-h-[480px] overflow-hidden lg:min-h-[680px]">
-              <img src={rosemaryAsset.url} alt="Anna Rosemary Hair Oil" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-              <div className="absolute bottom-5 left-5 bg-background px-5 py-4 shadow-editorial sm:bottom-8 sm:left-8">
-                <p className="font-display text-2xl text-primary">Made with purpose</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
-              </div>
-            </div>
-            <div className="flex items-center px-5 py-16 sm:px-10 lg:px-16 lg:py-20">
-              <div className="max-w-xl">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+            <div className="max-w-2xl">
+
                 <p className="eyebrow">About Anna Essentials</p>
                 <h2 className="section-title mt-3">A woman’s vision, growing with every bottle.</h2>
                 <p className="mt-7 text-base leading-8 text-muted-foreground">
