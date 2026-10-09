@@ -6,7 +6,6 @@ import { useState } from "react";
 import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
 import heroMobile from "@/assets/anna-hero-mobile.jpg";
 import collectionBannerAsset from "@/assets/anna-collection-banner.png.asset.json";
-import myrrhAsset from "@/assets/Anna_Myrrah_Essential_Oil_Still_Life.png.asset.json";
 import { OrderDialog } from "@/components/order-dialog";
 import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
@@ -182,15 +181,12 @@ function Index() {
         </section>
 
         <section id="contact" className="section-space scroll-mt-20 overflow-hidden bg-secondary">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
+          <div className="mx-auto max-w-3xl px-5 text-center lg:px-10">
             <div>
               <p className="eyebrow">Let’s connect</p>
               <h2 className="section-title mt-3">Personal service, one message away.</h2>
-              <p className="mt-6 max-w-lg text-base leading-8 text-muted-foreground">Ask about a product, place an order, or learn where to find Anna Essentials at selected holiday exhibitions.</p>
-              <div className="mt-8 flex flex-wrap gap-3"><Button variant="primary" onClick={() => setOrderOpen(true)}>Contact Anna Essentials <ArrowRight className="size-4" /></Button><Button asChild variant="outline"><a href="https://wa.me/251911346077" target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a></Button></div>
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <img src={myrrhAsset.url} alt="Anna Myrrh Essential Oil display" className="h-full w-full object-cover object-[center_58%]" loading="lazy" />
+              <p className="mt-6 text-base leading-8 text-muted-foreground">Ask about a product, place an order, or learn where to find Anna Essentials at selected holiday exhibitions.</p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3"><Button variant="primary" onClick={() => setOrderOpen(true)}>Contact Anna Essentials <ArrowRight className="size-4" /></Button><Button asChild variant="outline"><a href="https://wa.me/251911346077" target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a></Button></div>
             </div>
           </div>
         </section>
