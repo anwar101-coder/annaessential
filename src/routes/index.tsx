@@ -127,9 +127,9 @@ function Index() {
                   <div><Leaf className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our approach</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">A focused collection with natural ingredients at its heart.</p></div>
                   <div><Sparkles className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our mission</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">To inspire women to build strength in Ethiopia and across Africa.</p></div>
                 </div>
-              </div>
             </div>
           </div>
+
         </section>
 
         <section id="publications" className="section-space scroll-mt-20">
