@@ -105,10 +105,11 @@ function Index() {
                 className="h-auto w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute bottom-4 left-4 bg-background/95 px-4 py-3 shadow-editorial sm:bottom-7 sm:left-7 sm:px-5 sm:py-4">
-                <p className="font-display text-xl text-primary sm:text-2xl">Made with purpose</p>
-                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">Built in Ethiopia</p>
+              <div className="absolute left-3 top-3 bg-background/90 px-3 py-2 shadow-editorial sm:left-7 sm:top-7 sm:px-5 sm:py-4">
+                <p className="font-display text-base leading-tight text-primary sm:text-2xl">Made with purpose</p>
+                <p className="mt-0.5 text-[0.5rem] uppercase tracking-[0.14em] text-muted-foreground sm:mt-1 sm:text-xs">Built in Ethiopia</p>
               </div>
+
             </div>
 
           </div>
