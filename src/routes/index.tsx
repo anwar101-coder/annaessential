@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
 import heroMobile from "@/assets/anna-hero-mobile.jpg";
+import collectionBannerAsset from "@/assets/anna-collection-banner.png.asset.json";
 import myrrhAsset from "@/assets/Anna_Myrrah_Essential_Oil_Still_Life.png.asset.json";
 import rosemaryAsset from "@/assets/Natural_Rosemary_Hair_Oil_with_Dropper_Cap.png.asset.json";
 import { OrderDialog } from "@/components/order-dialog";
@@ -92,6 +93,19 @@ function Index() {
             </div>
             <div className="mt-12 text-center">
               <Button asChild variant="outline"><Link to="/products">View more products <ArrowRight className="size-4" /></Link></Button>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="The complete Anna Essentials collection" className="overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-10">
+            <div className="overflow-hidden rounded-[2rem] shadow-editorial">
+              <img
+                src={collectionBannerAsset.url}
+                alt="The complete Anna Essentials oil collection — Pure Nature. Real Benefits."
+                className="h-auto w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
