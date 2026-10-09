@@ -7,7 +7,6 @@ import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
 import heroMobile from "@/assets/anna-hero-mobile.jpg";
 import collectionBannerAsset from "@/assets/anna-collection-banner.png.asset.json";
 import myrrhAsset from "@/assets/Anna_Myrrah_Essential_Oil_Still_Life.png.asset.json";
-import rosemaryAsset from "@/assets/Natural_Rosemary_Hair_Oil_with_Dropper_Cap.png.asset.json";
 import { OrderDialog } from "@/components/order-dialog";
 import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
@@ -99,28 +98,33 @@ function Index() {
 
         <section aria-label="The complete Anna Essentials collection" className="overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
-            <div className="overflow-hidden rounded-[2rem] shadow-editorial">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-editorial">
+              <div className="flex items-baseline justify-between gap-3 bg-background px-4 py-3 sm:hidden">
+                <p className="font-display text-lg text-primary">Made with purpose</p>
+                <p className="text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
+              </div>
               <img
                 src={collectionBannerAsset.url}
                 alt="The complete Anna Essentials oil collection — Pure Nature. Real Benefits."
                 className="h-auto w-full object-cover"
                 loading="lazy"
               />
+              <div className="absolute left-7 top-7 hidden bg-background/90 px-5 py-4 shadow-editorial sm:block">
+                <p className="font-display text-2xl leading-tight text-primary">Made with purpose</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
+              </div>
+
+
             </div>
+
           </div>
         </section>
 
         <section id="about" className="scroll-mt-20 bg-secondary">
-          <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-            <div className="relative min-h-[480px] overflow-hidden lg:min-h-[680px]">
-              <img src={rosemaryAsset.url} alt="Anna Rosemary Hair Oil" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-              <div className="absolute bottom-5 left-5 bg-background px-5 py-4 shadow-editorial sm:bottom-8 sm:left-8">
-                <p className="font-display text-2xl text-primary">Made with purpose</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
-              </div>
-            </div>
-            <div className="flex items-center px-5 py-16 sm:px-10 lg:px-16 lg:py-20">
-              <div className="max-w-xl">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+            <div className="mx-auto max-w-3xl">
+
+
                 <p className="eyebrow">About Anna Essentials</p>
                 <h2 className="section-title mt-3">A woman’s vision, growing with every bottle.</h2>
                 <p className="mt-7 text-base leading-8 text-muted-foreground">
@@ -130,10 +134,10 @@ function Index() {
                   <div><Leaf className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our approach</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">A focused collection with natural ingredients at its heart.</p></div>
                   <div><Sparkles className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our mission</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">To inspire women to build strength in Ethiopia and across Africa.</p></div>
                 </div>
-              </div>
             </div>
           </div>
         </section>
+
 
         <section id="publications" className="section-space scroll-mt-20">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
