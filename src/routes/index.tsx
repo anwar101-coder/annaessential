@@ -99,16 +99,21 @@ function Index() {
         <section aria-label="The complete Anna Essentials collection" className="overflow-hidden bg-secondary py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-10">
             <div className="relative overflow-hidden rounded-[2rem] shadow-editorial">
+              <div className="flex items-baseline justify-between gap-3 bg-background px-4 py-3 sm:hidden">
+                <p className="font-display text-lg text-primary">Made with purpose</p>
+                <p className="text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
+              </div>
               <img
                 src={collectionBannerAsset.url}
                 alt="The complete Anna Essentials oil collection — Pure Nature. Real Benefits."
                 className="h-auto w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute left-3 top-3 bg-background/90 px-3 py-2 shadow-editorial sm:left-7 sm:top-7 sm:px-5 sm:py-4">
-                <p className="font-display text-base leading-tight text-primary sm:text-2xl">Made with purpose</p>
-                <p className="mt-0.5 text-[0.5rem] uppercase tracking-[0.14em] text-muted-foreground sm:mt-1 sm:text-xs">Built in Ethiopia</p>
+              <div className="absolute left-7 top-7 hidden bg-background/90 px-5 py-4 shadow-editorial sm:block">
+                <p className="font-display text-2xl leading-tight text-primary">Made with purpose</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
               </div>
+
 
             </div>
 
