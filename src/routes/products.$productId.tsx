@@ -40,7 +40,8 @@ function ProductPage() {
   const { productId } = Route.useParams();
   const [orderOpen, setOrderOpen] = useState(false);
   const { data: products } = useSuspenseQuery(productsQuery);
-  const product = products.find((item) => item.id === productId)!;
+  const product = products.find((item) => item.id === productId);
+  if (!product) throw notFound();
 
   return (
     <div className="min-h-screen bg-background">
