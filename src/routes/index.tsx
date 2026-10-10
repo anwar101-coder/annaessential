@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { ArrowRight, BookOpen, Leaf, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Leaf, MapPin, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
@@ -137,28 +137,6 @@ function Index() {
           </div>
         </section>
 
-
-        <section id="publications" className="section-space scroll-mt-20">
-          <div className="mx-auto max-w-7xl px-5 lg:px-10">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="eyebrow">The journal</p>
-              <h2 className="section-title mt-3">Simple guidance for mindful rituals.</h2>
-            </div>
-            <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
-              {[
-                ["01", "Understanding botanical oils", "A clear introduction to choosing and using natural oils with intention."],
-                ["02", "Building a consistent ritual", "Simple ideas for making personal-care moments feel calm and considered."],
-                ["03", "Caring for every bottle", "Practical storage tips to keep your oils protected and easy to use."],
-              ].map(([number, title, copy]) => (
-                <article key={number} className="bg-background p-7 sm:p-9">
-                  <div className="flex items-center justify-between"><span className="text-xs font-semibold text-gold-deep">{number}</span><BookOpen className="size-4 text-primary" /></div>
-                  <h3 className="mt-12 font-display text-2xl">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground">{copy}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section className="bg-primary text-primary-foreground">
           <div className="mx-auto grid max-w-7xl lg:grid-cols-[0.8fr_1.2fr]">
