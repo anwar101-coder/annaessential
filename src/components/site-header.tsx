@@ -10,7 +10,6 @@ const navItems = [
   { label: "Home", to: "/" as const },
   { label: "About", to: "/" as const, hash: "about" },
   { label: "Products", to: "/products" as const },
-  { label: "Publications", to: "/" as const, hash: "publications" },
   { label: "Contact", to: "/" as const, hash: "contact" },
 ];
 
