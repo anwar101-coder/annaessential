@@ -27,6 +27,7 @@ export type Database = {
           image_url: string
           name: string
           price: number
+          short_description: string
           size: string
           slug: string
           sort_order: number
@@ -45,6 +46,7 @@ export type Database = {
           image_url?: string
           name: string
           price: number
+          short_description?: string
           size?: string
           slug: string
           sort_order?: number
@@ -63,6 +65,7 @@ export type Database = {
           image_url?: string
           name?: string
           price?: number
+          short_description?: string
           size?: string
           slug?: string
           sort_order?: number

@@ -1,0 +1,2 @@
+ALTER TABLE public.products ADD COLUMN IF NOT EXISTS short_description text NOT NULL DEFAULT '';
+COMMENT ON COLUMN public.products.short_description IS 'Short summary shown under the product name on cards; keep to about two lines.';
