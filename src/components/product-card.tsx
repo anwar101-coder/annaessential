@@ -4,6 +4,7 @@ import type { Product } from "@/lib/products";
 
 export function ProductCard({ product, onOrder }: { product: Product; onOrder: () => void }) {
   const features = product.features ?? [];
+  const summary = product.shortDescription?.trim() || product.description;
 
   return (
     <article className="product-card group flex h-full flex-col overflow-hidden rounded-[2rem] bg-card">
@@ -32,7 +33,7 @@ export function ProductCard({ product, onOrder }: { product: Product; onOrder: (
             <Link to="/products/$productId" params={{ productId: product.id }} className="font-display text-2xl font-semibold leading-tight text-primary hover:text-gold-deep">
               {product.name}
             </Link>
-            <p className="mt-2 line-clamp-3 text-[0.8rem] leading-5 text-muted-foreground">{product.description}</p>
+            <p className="mt-2 line-clamp-2 text-[0.8rem] leading-5 text-muted-foreground">{summary}</p>
           </div>
           {features.length > 0 && (
             <>

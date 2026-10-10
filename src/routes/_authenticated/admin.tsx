@@ -14,8 +14,8 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Tables } from "@/integrations/supabase/types";
 
 type ProductRow = Tables<"products">;
-type Draft = Pick<ProductRow, "id" | "slug" | "name" | "description" | "price" | "size" | "image_url" | "image_path" | "featured" | "available" | "status" | "sort_order" | "features">;
-const emptyDraft: Draft = { id: "", slug: "", name: "", description: "", price: 0, size: "", image_url: "", image_path: null, featured: false, available: true, status: "draft", sort_order: 0, features: "" };
+type Draft = Pick<ProductRow, "id" | "slug" | "name" | "description" | "short_description" | "price" | "size" | "image_url" | "image_path" | "featured" | "available" | "status" | "sort_order" | "features">;
+const emptyDraft: Draft = { id: "", slug: "", name: "", description: "", short_description: "", price: 0, size: "", image_url: "", image_path: null, featured: false, available: true, status: "draft", sort_order: 0, features: "" };
 
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({ meta: [
@@ -75,7 +75,7 @@ function AdminPage() {
       imagePath = path; imageUrl = "";
     }
     const slug = draft.slug || draft.name.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-    const payload = { slug, name: draft.name, description: draft.description, features: draft.features, price: Number(draft.price), size: draft.size, image_url: imageUrl, image_path: imagePath, featured: draft.featured, available: draft.available, status: draft.status, sort_order: Number(draft.sort_order) };
+    const payload = { slug, name: draft.name, description: draft.description, short_description: draft.short_description, features: draft.features, price: Number(draft.price), size: draft.size, image_url: imageUrl, image_path: imagePath, featured: draft.featured, available: draft.available, status: draft.status, sort_order: Number(draft.sort_order) };
     const result = draft.id ? await supabase.from("products").update(payload).eq("id", draft.id) : await supabase.from("products").insert(payload);
     if (result.error) { if (file && imagePath) await supabase.storage.from("product-images").remove([imagePath]); setNotice(result.error.message); setBusy(false); return; }
     if (file && draft.image_path) await supabase.storage.from("product-images").remove([draft.image_path]);
