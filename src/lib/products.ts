@@ -10,6 +10,7 @@ export type Product = {
   price: number;
   size: string;
   description: string;
+  shortDescription?: string;
   image: string;
   featured: boolean;
   features?: { title: string; detail: string }[];
