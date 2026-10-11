@@ -47,6 +47,9 @@ function Index() {
         <SiteHeader onOrder={() => setOrderOpen(true)} />
 
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 pb-16 text-center sm:px-10 md:pb-16 lg:pb-20">
+          <p className="mb-4 whitespace-nowrap font-display text-[1.45rem] uppercase leading-none tracking-[0.26em] text-hero-foreground sm:mb-6 sm:text-3xl sm:tracking-[0.3em] lg:text-[2.5rem]">
+            Anna Essentials
+          </p>
           <p className="mb-5 flex items-center gap-3 text-[0.6rem] sm:text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold">
             <span className="hidden h-px w-8 bg-gold sm:block" /> Natural care, thoughtfully made <span className="hidden h-px w-8 bg-gold sm:block" />
           </p>
