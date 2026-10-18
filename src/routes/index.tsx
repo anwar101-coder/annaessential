@@ -3,9 +3,9 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, Leaf, MapPin, Sparkles } from "lucide-react";
 import { useState } from "react";
 
-import heroAsset from "@/assets/anna-hero-banner.jpg.asset.json";
+import heroAsset from "@/assets/anna-hero-banner.jpg";
 import heroMobile from "@/assets/anna-hero-mobile.jpg";
-import collectionBannerAsset from "@/assets/anna-collection-banner.png.asset.json";
+import collectionBannerAsset from "@/assets/anna-collection-banner.png";
 import { OrderDialog } from "@/components/order-dialog";
 import { ProductCard } from "@/components/product-card";
 import { SiteFooter } from "@/components/site-footer";
@@ -41,7 +41,7 @@ function Index() {
       <section className="hero-shell relative flex min-h-[max(100svh,780px)] items-center md:min-h-[640px] md:items-end overflow-hidden pt-24 text-hero-foreground lg:min-h-[820px]">
         <picture>
           <source media="(max-width: 767px)" srcSet={heroMobile} />
-          <img src={heroAsset.url} alt="Two Anna Essentials dropper bottles on a deep navy background" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <img src={heroAsset} alt="Two Anna Essentials dropper bottles on a deep navy background" className="absolute inset-0 h-full w-full object-cover object-center" />
         </picture>
         <div className="hero-shade absolute inset-0" />
         <SiteHeader onOrder={() => setOrderOpen(true)} />
@@ -106,7 +106,7 @@ function Index() {
                 <p className="text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground">Built in Ethiopia</p>
               </div>
               <img
-                src={collectionBannerAsset.url}
+                src={collectionBannerAsset}
                 alt="The complete Anna Essentials oil collection — Pure Nature. Real Benefits."
                 className="h-auto w-full object-cover"
                 loading="lazy"
