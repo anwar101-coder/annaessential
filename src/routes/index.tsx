@@ -129,10 +129,13 @@ function Index() {
 
 
                 <p className="eyebrow">About Anna Essentials</p>
-                <h2 className="section-title mt-3">A woman’s vision, growing with every bottle.</h2>
-                <p className="mt-7 text-base leading-8 text-muted-foreground">
-                  Anna Essentials is the story of a determined Ethiopian woman entrepreneur building a brand rooted in care, confidence, and opportunity. Every product reflects a belief that thoughtful everyday rituals can feel both natural and refined.
-                </p>
+                <h2 className="section-title mt-3">Anna Essentials – Your Beauty, Your Care, Your Confidence.</h2>
+                <div className="mt-7 space-y-5 text-base leading-8 text-muted-foreground"> 
+                  <p> Established in 2024, ANNA Essentials is an Ethiopian beauty and self-care brand dedicated to bringing nature-inspired products to everyday beauty routines. We offer a selection of essential oils, hair care oils, skin care products, and natural beauty essentials. </p> 
+                  <p> Our product range includes rosemary hair oil, black seed oil, castor oil, frankincense oil, myrrh oil, and other beauty essentials. </p>
+                  <p> At ANNA Essentials, we believe beauty begins with self-care. Our mission is to make quality beauty products accessible while combining nature, elegance, and care in every product. </p> 
+                  <p> Proudly based in Ethiopia, we are committed to growing our brand and bringing our beauty products to more customers. </p>
+                </div>
                 <div className="mt-9 grid gap-6 border-t border-border pt-8 sm:grid-cols-2">
                   <div><Leaf className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our approach</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">A focused collection with natural ingredients at its heart.</p></div>
                   <div><Sparkles className="size-5 text-primary" /><h3 className="mt-4 font-display text-xl">Our mission</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">To inspire women to build strength in Ethiopia and across Africa.</p></div>
