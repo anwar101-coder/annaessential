@@ -86,7 +86,7 @@ function Index() {
                 <h2 className="section-title mt-3">Our essential selection</h2>
               </div>
               <p className="max-w-md text-sm leading-7 text-muted-foreground md:text-right">
-                Established in 2024, ANNA Essentials is an Ethiopian beauty and self-care brand offering nature-inspired hair oils, essential oils, and skincare products. We are committed to making quality beauty essentials accessible while emphasizing care, simplicity, and elegance.Proudly based in Ethiopia, we aim to support everyday self-care through thoughtfully selected beauty products.
+               Since 2024, blending nature and elegance to redefine everyday beauty and self-care in Ethiopia.
 
               </p>
             </div>
