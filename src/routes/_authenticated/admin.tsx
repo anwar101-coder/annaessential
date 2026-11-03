@@ -18,6 +18,7 @@ type Draft = Pick<ProductRow, "id" | "slug" | "name" | "description" | "short_de
 const emptyDraft: Draft = { id: "", slug: "", name: "", description: "", short_description: "", price: 0, size: "", image_url: "", image_path: null, featured: false, available: true, status: "draft", sort_order: 0, features: "" };
 
 export const Route = createFileRoute("/_authenticated/admin")({
+  staticData: { sitemap: false },
   head: () => ({ meta: [
     { title: "Product Management | Anna Essentials" },
     { name: "description", content: "Manage Anna Essentials products, availability, prices, and photos." },

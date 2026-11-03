@@ -17,6 +17,7 @@ import { getPublicProducts } from "@/lib/products.functions";
 const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   loader: ({ context }) => context.queryClient.ensureQueryData(productsQuery),
   head: () => ({
     meta: [

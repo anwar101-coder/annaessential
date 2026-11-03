@@ -10,6 +10,7 @@ import { lovable } from "@/integrations/lovable";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/auth")({
+  staticData: { sitemap: false },
   head: () => ({ meta: [
     { title: "Owner Sign In | Anna Essentials" },
     { name: "description", content: "Secure owner access for Anna Essentials product management." },

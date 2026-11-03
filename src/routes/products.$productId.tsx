@@ -12,6 +12,7 @@ import { getPublicProducts } from "@/lib/products.functions";
 const productsQuery = queryOptions({ queryKey: ["public-products"], queryFn: () => getPublicProducts() });
 
 export const Route = createFileRoute("/products/$productId")({
+  staticData: { sitemap: true },
   loader: async ({ context, params }) => {
     const products = await context.queryClient.ensureQueryData(productsQuery);
     const product = products.find((item) => item.id === params.productId);
