@@ -35,7 +35,6 @@ export const Route = createFileRoute("/sitemap.xml")({
               .from("products")
               .select("id")
               .eq("status", "published")
-              .eq("available", true)
               .order("id")
               .range(offset, offset + pageSize - 1);
             if (error) return new Response("Sitemap unavailable", { status: 503, headers: { "Cache-Control": "no-store" } });
