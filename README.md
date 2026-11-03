@@ -2,7 +2,7 @@
 
 **A modern, elegant, and responsive product showcase website for Anna Essentials, a brand specializing in premium natural oils and aromatic products.**
 
-🌐 **Live Website:** [annaessential.vercel.app](https://annaessential.vercel.app)
+🌐 **Live Website:** [annaessential.com](https://annaessential.com)
 
 ---
 
